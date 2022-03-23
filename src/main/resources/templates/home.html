@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<p th:text="${expenseSaved}"></p>
+	<h1>Expense Tracker</h1>
+	<a th:href="@{/expense}">Add Expense</a>
+	<p th:text="${message}"></p>
+	<div th:each="expense: ${expenses}">
+		<h3 th:text="${expense.expenseName}"></h3>
+		<p>&#8377; <span th:text="${expense.amount}"></span></p>
+		<a th:href="@{/expense/{id}(id=${expense.id})}">Edit</a>
+		<a th:href="@{/expense/{id}/delete(id=${expense.id})}">Delete</a>
+	</div>
+</body>
+</html>

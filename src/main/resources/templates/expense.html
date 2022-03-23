@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Add Expense</h1>
+	<form action="#" th:action="@{/expense}" th:object="${expense}" method="post">
+		<input type="hidden" th:field="*{id}">
+		<p>Description: <input type="text" th:field="*{expenseName}" /></p>
+		<p>Amount: <input type="text" th:field="*{amount}" /></p>
+		<p>Note: <textarea type="text" th:field="*{note}"></textarea></p>
+		<button type="submit">ADD EXPENSE</button>
+	</form>
+</body>
+</html>
